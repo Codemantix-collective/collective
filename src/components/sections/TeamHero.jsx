@@ -99,7 +99,7 @@ export default function TeamHero() {
   return (
     <section
       ref={elementRef}
-      className="relative min-h-screen overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-accent-900"
+      className="relative min-h-screen !overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-accent-900"
     >
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">

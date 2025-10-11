@@ -127,7 +127,7 @@ const departments = ["All", "Development", "Design", "Analytics", "Graphics"];
 export default function TeamGrid() {
   const [selectedDepartment, setSelectedDepartment] = useState("All");
   const [selectedMember, setSelectedMember] = useState(null);
-  const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.1 });
+  const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0 });
 
   const filteredMembers =
     selectedDepartment === "All"
@@ -255,7 +255,7 @@ export default function TeamGrid() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
           {filteredMembers.map((member) => {
@@ -378,7 +378,7 @@ export default function TeamGrid() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 pt-12 backdrop-blur-sm"
               onClick={() => setSelectedMember(null)}
             >
               <motion.div
@@ -387,7 +387,7 @@ export default function TeamGrid() {
                 animate="visible"
                 exit="exit"
                 onClick={(e) => e.stopPropagation()}
-                className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-white p-8"
+                className="max-h-[80vh] scrollbar-hide w-full max-w-2xl overflow-y-auto rounded-3xl bg-white p-8"
               >
                 {/* Close Button */}
                 <button
