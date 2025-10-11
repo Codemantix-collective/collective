@@ -269,7 +269,7 @@ export default function ServicesHero() {
             {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col gap-4 sm:flex-row sm:gap-6"
+              className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
             >
               <Link href="/contact">
                 <motion.button
