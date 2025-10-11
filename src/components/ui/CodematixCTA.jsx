@@ -8,9 +8,9 @@ export default function CodematixCTA({
   title = "Ready to Transform Your Business?",
   description = "Let's build something amazing together with cutting-edge technology solutions.",
   primaryText = "Get Started",
-  primaryHref = "/Contact",
+  primaryHref = "/contact",
   secondaryText = "View Our Work",
-  secondaryHref = "/Projects",
+  secondaryHref = "/projects",
   variant = "gradient", // "gradient", "primary", "accent", "secondary"
 }) {
   const getBackgroundClasses = () => {

@@ -50,7 +50,7 @@ export default function ContactCTA() {
             Let’s work together to bring your ideas to life. Reach out today and we’ll create
             something amazing.
           </p>
-          <Link href="/Contact">
+          <Link href="/contact">
             <button className="mx-auto block rounded-lg bg-[#F97316] px-6 py-3 text-center font-semibold text-white transition hover:bg-orange-600 lg:mx-0">
               Reach out to us
             </button>

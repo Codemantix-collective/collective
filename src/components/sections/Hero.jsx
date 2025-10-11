@@ -232,7 +232,7 @@ export default function Hero() {
               className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start"
             >
               <Link
-                href="/Projects"
+                href="/projects"
                 className="group inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-primary-800 to-accent-500 px-8 py-4 font-semibold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:from-primary-900 hover:to-accent-600 hover:shadow-2xl"
               >
                 View Our Work
