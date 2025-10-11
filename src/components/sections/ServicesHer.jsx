@@ -222,7 +222,7 @@ export default function ServicesHero() {
 
             {/* Main Heading with Gradient Animation */}
             <motion.div variants={itemVariants} className="space-y-4">
-              <h1 className="text-4xl font-bold leading-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl">
+              <h1 className="text-4xl font-bold leading-tight text-gray-900 dark:text-white sm:text-5xl lg:text-5xl">
                 Transforming Ideas Into
                 <motion.span
                   className="block bg-gradient-to-r from-primary-600 via-accent-500 to-secondary-500 bg-clip-text text-transparent"
