@@ -84,13 +84,17 @@ const ProfessionalNavbar = () => {
         <div className="container-custom relative">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center gap-8">
-              <div className="flex items-center gap-2">
+              <div>
+                <Link href="tel:+2348123121369" className="flex items-center gap-2">
                 <Phone size={14} className="text-accent-400" />
-                <span className="font-medium">+234 812 312 1369</span>
+                  <span className="font-medium">+234 812 312 1369</span>
+                </Link>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail size={14} className="text-accent-400" />
-                <span className="font-medium">info@codemantixcollective.com</span>
+              <div>
+                <Link href="mailto:info@codemantixcollective.com" className="flex items-center gap-2">
+                  <Mail size={14} className="text-accent-400" />
+                  <span className="font-medium">info@codemantixcollective.com</span>
+                </Link>
               </div>
             </div>
             <div className="font-semibold text-gray-200">
@@ -606,9 +610,9 @@ const ProfessionalNavbar = () => {
 
                   <div className="space-y-4">
                     {[
-                      { icon: Phone, text: "+234 812 312 1369", delay: 0.9 },
-                      { icon: Mail, text: "info@codemantixcollective.com", delay: 1.0 },
-                    ].map(({ icon: Icon, text, delay }, index) => (
+                      { icon: Phone, text: "+234 812 312 1369", link: "tel:+2348123121369", delay: 0.9 },
+                      { icon: Mail, text: "info@codemantixcollective.com", link: "mailto:info@codemantixcollective.com", delay: 1.0 },
+                    ].map(({ icon: Icon, text, link, delay }, index) => (
                       <motion.div
                         key={index}
                         className="group flex items-center gap-4"
@@ -624,9 +628,11 @@ const ProfessionalNavbar = () => {
                         >
                           <Icon className="h-5 w-5 text-accent-500" />
                         </motion.div>
-                        <span className="text-sm font-medium text-gray-600 transition-colors duration-300 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-200">
-                          {text}
-                        </span>
+                        <Link href={link} onClick={closeSidebar} className="flex-1">
+                          <span className="text-sm font-medium text-gray-600 transition-colors duration-300 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-200">
+                            {text}
+                          </span>
+                        </Link>
                       </motion.div>
                     ))}
                   </div>
@@ -639,7 +645,8 @@ const ProfessionalNavbar = () => {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1.1, duration: 0.6 }}
-              >
+                >
+                <Link href="/contact" onClick={closeSidebar}>
                 {/* Top glowing border */}
                 <motion.div
                   animate={{ opacity: [0.3, 0.7, 0.3] }}
@@ -655,12 +662,11 @@ const ProfessionalNavbar = () => {
                   {/* Glowing background effect */}
                   <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary-600 to-accent-500 opacity-60 blur-lg transition-opacity duration-300 group-hover:opacity-100" />
 
-                  <Link
-                    href="/contact"
-                    onClick={closeSidebar}
+                  <span
+                    
                     className="relative flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-primary-800 to-accent-600 px-8 py-5 font-bold text-white shadow-2xl transition-all duration-300 hover:from-primary-900 hover:to-accent-700"
                   >
-                    <span className="text-lg">Get Your Quote</span>
+                    <span className="text-lg ">Get Your Quote</span>
                     <motion.div
                       animate={{
                         x: [0, 3, 0],
@@ -677,7 +683,7 @@ const ProfessionalNavbar = () => {
                         className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
                       />
                     </motion.div>
-                  </Link>
+                  </span>
 
                   {/* Shimmer effect */}
                   <motion.div
@@ -691,7 +697,8 @@ const ProfessionalNavbar = () => {
                     className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100"
                     style={{ transform: "skewX(-20deg)" }}
                   />
-                </motion.div>
+                  </motion.div>
+                  </Link>
               </motion.div>
             </motion.div>
           </>

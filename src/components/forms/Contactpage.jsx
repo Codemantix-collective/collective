@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -75,36 +76,39 @@ export default function ContactPage() {
 
           {/* Contact Info Cards */}
           <div className="mt-8 space-y-4">
-            <motion.div
-              variants={hoverVariant}
-              whileHover="hover"
-              className="flex cursor-pointer items-center space-x-4 rounded-xl border border-primary-100 bg-primary-50 p-4 text-lg font-medium text-primary-900 transition-all duration-300 hover:border-primary-200 hover:bg-primary-100 dark:border-primary-700 dark:bg-primary-900/50 dark:text-white dark:hover:border-primary-600 dark:hover:bg-primary-800/50"
-            >
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-secondary-500 to-secondary-600">
-                <Mail size={20} className="text-white" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="mb-1 text-sm text-gray-600 dark:text-gray-400">Email us at</div>
-                <span className="break-all text-sm sm:text-base">
-                  codemantixcollective@gmail.com
-                </span>
-              </div>
-            </motion.div>
+            <Link href="mailto:info@codemantixcollective.com" className="block">
+              <motion.div
+                variants={hoverVariant}
+                whileHover="hover"
+                className="flex cursor-pointer items-center space-x-4 rounded-xl border border-primary-100 bg-primary-50 p-4 text-lg font-medium text-primary-900 transition-all duration-300 hover:border-primary-200 hover:bg-primary-100 dark:border-primary-700 dark:bg-primary-900/50 dark:text-white dark:hover:border-primary-600 dark:hover:bg-primary-800/50"
+              >
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-secondary-500 to-secondary-600">
+                  <Mail size={20} className="text-white" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="mb-1 text-sm text-gray-600 dark:text-gray-400">Email us at</div>
+                  <span className="break-all text-sm sm:text-base">
+                    info@codemantixcollective.com
+                  </span>
+                </div>
+              </motion.div>
+            </Link>
 
-            <motion.div
-              variants={hoverVariant}
-              whileHover="hover"
-              className="flex cursor-pointer items-center space-x-4 rounded-xl border border-accent-100 bg-accent-50 p-4 text-lg font-medium text-primary-900 transition-all duration-300 hover:border-accent-200 hover:bg-accent-100 dark:border-accent-700 dark:bg-accent-900/50 dark:text-white dark:hover:border-accent-600 dark:hover:bg-accent-800/50"
-            >
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-accent-500 to-accent-600">
-                <Phone size={20} className="text-white" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="mb-1 text-sm text-gray-600 dark:text-gray-400">Call us at</div>
-                <span className="text-sm sm:text-base">+234 812 312 1369</span>
-              </div>
-            </motion.div>
-
+            <Link href="tel:+2348123121369" className="block">
+              <motion.div
+                variants={hoverVariant}
+                whileHover="hover"
+                className="flex cursor-pointer items-center space-x-4 rounded-xl border border-accent-100 bg-accent-50 p-4 text-lg font-medium text-primary-900 transition-all duration-300 hover:border-accent-200 hover:bg-accent-100 dark:border-accent-700 dark:bg-accent-900/50 dark:text-white dark:hover:border-accent-600 dark:hover:bg-accent-800/50"
+              >
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-accent-500 to-accent-600">
+                  <Phone size={20} className="text-white" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="mb-1 text-sm text-gray-600 dark:text-gray-400">Call us at</div>
+                  <span className="text-sm sm:text-base">+234 812 312 1369</span>
+                </div>
+              </motion.div>
+            </Link>
             <motion.div
               variants={hoverVariant}
               whileHover="hover"
