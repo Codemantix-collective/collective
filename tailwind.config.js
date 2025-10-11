@@ -73,6 +73,16 @@ module.exports = {
       fontFamily: {
         inter: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
+       // media quries
+      screens: {
+        mobile: { max: '640px' },
+        // => @media (max-width: 640px) { ... }
+        tablet: { min: '641px', max: '1023px' },
+        // => @media (min-width: 641px and max-width: 1023px)
+        laptop: { min: '1024px' },
+        Xlaptop: { min: '1440px' },
+        // => @media (min-width: 768px) { ... }
+      },
       fontSize: {
         xs: ["0.75rem", { lineHeight: "1rem" }],
         sm: ["0.875rem", { lineHeight: "1.25rem" }],

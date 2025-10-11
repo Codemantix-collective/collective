@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://codemantix-collectives.vercel.app",
+  siteUrl: process.env.SITE_URL || "https://codemantixcollective.com",
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   exclude: ["/api/*", "/admin/*", "/_next/*"],
@@ -12,7 +12,7 @@ module.exports = {
         disallow: ["/api/", "/admin/", "/_next/"],
       },
     ],
-    additionalSitemaps: ["https://codemantix-collectives.vercel.app/sitemap.xml"],
+    additionalSitemaps: ["https://codemantixcollective.com/sitemap.xml"],
   },
   transform: async (config, path) => {
     // Custom priority based on path
@@ -22,15 +22,21 @@ module.exports = {
     if (path === "/") {
       priority = 1.0;
       changefreq = "daily";
-    } else if (path.includes("/Services")) {
+    } else if (path.includes("/services")) {
       priority = 0.9;
       changefreq = "weekly";
-    } else if (path.includes("/Projects")) {
+    } else if (path.includes("/projects")) {
       priority = 0.8;
       changefreq = "monthly";
-    } else if (path.includes("/About")) {
-      priority = 0.6;
+    } else if (path.includes("/about")) {
+      priority = 0.8;
       changefreq = "monthly";
+    } else if (path.includes("/team")) {
+      priority = 0.7;
+      changefreq = "monthly";
+    } else if (path.includes("/contact")) {
+      priority = 0.9;
+      changefreq = "weekly";
     }
 
     return {
