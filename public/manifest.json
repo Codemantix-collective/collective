@@ -20,10 +20,10 @@
       "purpose": "any maskable"
     },
     {
-      "src": "/codelogo.png",
-      "type": "image/png",
+      "src": "/Images/Projects.jpg",
+      "type": "image/jpeg",
       "sizes": "512x512",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ],
   "categories": ["business", "productivity", "developer"],

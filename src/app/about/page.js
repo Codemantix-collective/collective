@@ -1,6 +1,42 @@
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 
+export const metadata = {
+  title: "About Us - Leading Digital Innovation Company",
+  description:
+    "Learn about Codemantix Collective, a pioneering digital innovation company. Discover our mission, vision, values, and the passionate team behind cutting-edge technology solutions.",
+  keywords: [
+    "about codemantix collective",
+    "digital innovation company",
+    "technology solutions team",
+    "web development agency",
+    "company mission vision",
+    "tech startup story",
+    "innovation leaders",
+    "digital transformation experts",
+  ],
+  openGraph: {
+    title: "About Codemantix Collective - Innovation Meets Excellence",
+    description:
+      "Discover the story behind Codemantix Collective and meet the innovative team transforming businesses through technology.",
+    images: [
+      {
+        url: "/Images/about-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "About Codemantix Collective Team",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Codemantix Collective - Innovation Meets Excellence",
+    description:
+      "Discover the story behind Codemantix Collective and meet the innovative team transforming businesses through technology.",
+  },
+};
+
 // Dynamic imports for better code splitting and performance
 const AboutHero = dynamic(() => import("../../components/sections/AboutHero"), {
   loading: () => (

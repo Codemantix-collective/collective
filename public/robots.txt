@@ -1,43 +1,12 @@
-# Robots.txt for codemantixcollective.com
-# This file tells search engine crawlers which pages or files they can or can't request from your site
-
+# *
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin/
 Disallow: /_next/
-Disallow: /private/
-Allow: /images/
-Allow: /public/
 
 # Host
 Host: https://codemantixcollective.com
 
-# Sitemap location
+# Sitemaps
 Sitemap: https://codemantixcollective.com/sitemap.xml
-
-# Crawl delay (helps prevent server overload)
-Crawl-delay: 1
-
-# Specific rules for major search engines
-User-agent: Googlebot
-Allow: /
-Disallow: /api/
-Disallow: /admin/
-Disallow: /_next/
-
-User-agent: Bingbot
-Allow: /
-Disallow: /api/
-Disallow: /admin/
-Disallow: /_next/
-
-# Block aggressive crawlers (optional)
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /

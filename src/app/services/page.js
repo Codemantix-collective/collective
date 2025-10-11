@@ -1,6 +1,44 @@
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 
+export const metadata = {
+  title: "Our Services - Web Development, UI/UX Design & Data Analysis",
+  description:
+    "Comprehensive digital solutions including modern web development, intuitive UI/UX design, and advanced data analysis. Transform your business with our cutting-edge technology services.",
+  keywords: [
+    "web development services",
+    "UI/UX design agency",
+    "data analysis consulting",
+    "responsive web design",
+    "modern web applications",
+    "user experience design",
+    "business intelligence",
+    "digital transformation",
+    "React development",
+    "Next.js development",
+  ],
+  openGraph: {
+    title: "Professional Services - Codemantix Collective",
+    description:
+      "Expert web development, UI/UX design, and data analysis services to elevate your digital presence.",
+    images: [
+      {
+        url: "/Images/services-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Codemantix Collective Services",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Professional Services - Codemantix Collective",
+    description:
+      "Expert web development, UI/UX design, and data analysis services to elevate your digital presence.",
+  },
+};
+
 // Dynamic imports for better code splitting and performance
 const ServicesHero = dynamic(() => import("@/components/sections/ServicesHer"), {
   loading: () => (
