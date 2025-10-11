@@ -237,7 +237,7 @@ export default function ProfessionalHero() {
             {/* Enhanced Main Heading */}
             <motion.div variants={itemVariants} className="space-y-6">
               <motion.h1
-                className="relative text-3xl font-bold leading-tight sm:text-5xl lg:text-6xl xl:text-7xl"
+                className="relative text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl xl:text-6xl"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
