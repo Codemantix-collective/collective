@@ -101,6 +101,13 @@ const nextConfig = {
 
   // Enable React strict mode
   reactStrictMode: true,
+
+  // Static export configuration (uncomment if deploying to static hosting)
+  // output: 'export',
+  // trailingSlash: true,
+  // images: {
+  //   unoptimized: true,
+  // },
 };
 
 export default nextConfig;
