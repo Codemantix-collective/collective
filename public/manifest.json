@@ -14,13 +14,13 @@
       "type": "image/x-icon"
     },
     {
-      "src": "/codelogo.png",
+      "src": "/LogoF.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any maskable"
     },
     {
-      "src": "/Images/Projects.jpg",
+      "src": "/LogoS.png",
       "type": "image/jpeg",
       "sizes": "512x512",
       "purpose": "any"

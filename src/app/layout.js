@@ -75,7 +75,7 @@ export const metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "KuU1paDyoNySsri82WGYzOqC2eMIDAdh1l6ruvBQhzs",
   },
 };
 
@@ -114,12 +114,12 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" sizes="60x60" href="/codelogo.png" />
         <link rel="apple-touch-icon" sizes="57x57" href="/codelogo.png" />
 
-        {/* Android/Chrome Icons - Using codelogo.png */}
-        <link rel="icon" type="image/png" sizes="192x192" href="/codelogo.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/codelogo.png" />
+        {/* Android/Chrome Icons - Using LogoF.png */}
+        <link rel="icon" type="image/png" sizes="192x192" href="/LogoF.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/LogoF.png" />
 
         {/* Microsoft Tiles */}
-        <meta name="msapplication-TileImage" content="/codelogo.png" />
+        <meta name="msapplication-TileImage" content="/LogoF.png" />
         <meta name="msapplication-TileColor" content="#1E3A8A" />
 
         {/* Web App Manifest */}

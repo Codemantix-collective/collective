@@ -24,7 +24,7 @@ const coreServices = [
     icon: CodeBracketIcon,
     gradient: "from-primary-500 to-primary-700",
     color: "primary",
-    href: "/Services#web-development",
+    href: "/services#web-development",
     features: ["React & Next.js", "Node.js APIs", "Cloud Deployment", "Performance Optimization"],
     stats: { projects: "150+", satisfaction: "98%" },
   },
@@ -36,7 +36,7 @@ const coreServices = [
     icon: EyeIcon,
     gradient: "from-accent-500 to-accent-700",
     color: "accent",
-    href: "/Services#ui-ux",
+    href: "/services#ui-ux",
     features: ["User Research", "Prototyping", "Design Systems", "Usability Testing"],
     stats: { projects: "120+", satisfaction: "99%" },
   },
@@ -48,7 +48,7 @@ const coreServices = [
     icon: PaintBrushIcon,
     gradient: "from-secondary-500 to-secondary-700",
     color: "secondary",
-    href: "/Services#graphics-design",
+    href: "/services#graphics-design",
     features: ["Brand Identity", "Print Design", "Digital Assets", "Marketing Materials"],
     stats: { projects: "200+", satisfaction: "97%" },
   },
@@ -60,7 +60,7 @@ const coreServices = [
     icon: ChartBarIcon,
     gradient: "from-orange-500 via-red-500 to-pink-500",
     color: "gradient",
-    href: "/Services#data-analysis",
+    href: "/services#data-analysis",
     features: ["Data Visualization", "ML Models", "Business Intelligence", "Predictive Analytics"],
     stats: { projects: "80+", satisfaction: "100%" },
   },
@@ -259,10 +259,10 @@ const ServicesSnapshot = () => {
 
         {/* Enhanced Service Cards Grid */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          // variants={containerVariants}
+          // initial="hidden"
+          // whileInView="visible"
+          viewport={{ once: true, amount: 1 }}
           className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
         >
           {coreServices.map((service, index) => {
