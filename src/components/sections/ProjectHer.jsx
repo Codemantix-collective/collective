@@ -245,13 +245,13 @@ export default function ProjectsHero() {
             {/* Main Headline */}
             <motion.h1
               variants={itemVariants}
-              className="text-4xl font-bold leading-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl xl:text-7xl"
+              className="text-4xl font-bold leading-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl xl:text-7xl flex gap-4 items-center justify-center mobile:flex-col mobile:gap-0 laptop-md:flex-col laptop-md:gap-0 laptop-md:items-start"
             >
-              <span className="block">Our</span>
+              <span className="">Our</span>
               <span className="bg-gradient-to-r from-primary-600 via-accent-500 to-secondary-600 bg-clip-text text-transparent">
                 Creative
               </span>
-              <span className="block">Portfolio</span>
+              <span className="">Portfolio</span>
             </motion.h1>
 
             {/* Enhanced Subtitle */}

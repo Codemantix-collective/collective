@@ -698,7 +698,7 @@ export default function ProfessionalHero() {
                     delay: 3,
                   }}
                   whileHover={{ scale: 1.18, rotate: -10 }}
-                  className="h-22 w-22 group absolute bottom-8 right-12 flex items-center justify-center rounded-3xl bg-gradient-to-br from-primary-600 via-accent-500 to-secondary-500 shadow-2xl"
+                  className="h-18 w-18 group absolute bottom-12 right-32 flex items-center justify-center rounded-3xl bg-gradient-to-br from-primary-600 via-accent-500 to-secondary-500 shadow-2xl"
                 >
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/30 to-transparent" />
                   <SwatchIcon className="relative h-11 w-11 text-white" />

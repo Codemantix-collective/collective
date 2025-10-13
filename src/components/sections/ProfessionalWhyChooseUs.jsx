@@ -103,8 +103,7 @@ export default function ProfessionalWhyChooseUs() {
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Left Column - Content */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >

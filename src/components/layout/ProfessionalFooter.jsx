@@ -317,8 +317,7 @@ export default function ProfessionalFooter() {
 
         {/* Enhanced Newsletter Section */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+         
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="relative border-t border-slate-700/50 py-16"
@@ -332,8 +331,7 @@ export default function ProfessionalFooter() {
 
           <div className="grid items-center gap-10 md:grid-cols-2">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+            
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
@@ -358,8 +356,7 @@ export default function ProfessionalFooter() {
 
             <motion.div
               className="flex flex-col gap-4 sm:flex-row"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+             
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
@@ -404,8 +401,7 @@ export default function ProfessionalFooter() {
 
         {/* Enhanced Bottom Footer */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+         
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="relative flex flex-col items-center justify-between border-t border-slate-700/50 py-10 md:flex-row"
@@ -444,8 +440,7 @@ export default function ProfessionalFooter() {
           {/* Enhanced Social Links */}
           <motion.div
             className="flex space-x-4"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+           
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 1.0 }}
           >

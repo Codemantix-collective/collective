@@ -192,8 +192,7 @@ export default function ProfessionalServices() {
 
         {/* Modern CTA Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-20 text-center"

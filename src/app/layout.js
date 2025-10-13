@@ -6,6 +6,11 @@ import "./globals.css";
 import ProfessionalNavbar from "../components/layout/ProfessionalNavbar.jsx";
 import ProfessionalFooter from "../components/layout/ProfessionalFooter.jsx";
 import { ThemeProvider } from "../components/providers/ThemeProvider.jsx";
+import {
+  OrganizationSchema,
+  WebsiteSchema,
+  ServicesSchema,
+} from "../components/seo/StructuredData.jsx";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -152,6 +157,11 @@ export default function RootLayout({ children }) {
           />
           <Analytics />
           <SpeedInsights />
+
+          {/* Structured Data */}
+          <OrganizationSchema />
+          <WebsiteSchema />
+          <ServicesSchema />
         </ThemeProvider>
       </body>
     </html>

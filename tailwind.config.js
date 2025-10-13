@@ -73,15 +73,19 @@ module.exports = {
       fontFamily: {
         inter: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
-       // media quries
+      // media quries
       screens: {
-        mobile: { max: '640px' },
+        mobile: { max: "640px" },
         // => @media (max-width: 640px) { ... }
-        tablet: { min: '641px', max: '1023px' },
+        tablet: { min: "641px", max: "1023px" },
         // => @media (min-width: 641px and max-width: 1023px)
-        laptop: { min: '1024px' },
-        Xlaptop: { min: '1440px' },
-        // => @media (min-width: 768px) { ... }
+        laptop: { min: "1024px" },
+        "laptop-md": { min: "1024px", max: "1279px" },
+        // => @media (min-width: 1024px and max-width: 1279px) { ... }
+        "laptop-lg": { min: "1280px" },
+        // => @media (min-width: 1280px) { ... }
+        Xlaptop: { min: "1440px" },
+        // => @media (min-width: 1440px) { ... }
       },
       fontSize: {
         xs: ["0.75rem", { lineHeight: "1rem" }],

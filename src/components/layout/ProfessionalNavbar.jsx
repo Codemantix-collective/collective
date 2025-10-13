@@ -8,6 +8,8 @@ import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { navLinks } from "../ui/Navlinks";
 import { motion, AnimatePresence } from "framer-motion";
+import SearchToggle from "../ui/SearchToggle";
+import SearchBox from "../ui/SearchBox";
 
 const ProfessionalNavbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -86,12 +88,15 @@ const ProfessionalNavbar = () => {
             <div className="flex items-center gap-8">
               <div>
                 <Link href="tel:+2348123121369" className="flex items-center gap-2">
-                <Phone size={14} className="text-accent-400" />
+                  <Phone size={14} className="text-accent-400" />
                   <span className="font-medium">+234 812 312 1369</span>
                 </Link>
               </div>
               <div>
-                <Link href="mailto:info@codemantixcollective.com" className="flex items-center gap-2">
+                <Link
+                  href="mailto:info@codemantixcollective.com"
+                  className="flex items-center gap-2"
+                >
                   <Mail size={14} className="text-accent-400" />
                   <span className="font-medium">info@codemantixcollective.com</span>
                 </Link>
@@ -132,7 +137,7 @@ const ProfessionalNavbar = () => {
 
         {/* Removed floating particles for better performance */}
         <div className="container-custom">
-          <div className="flex h-20 items-center justify-between">
+          <div className="laptop-md:gap-3 flex h-20 items-center justify-between gap-2 xl:gap-4">
             {/* Enhanced Logo */}
             <motion.div
               className="relative flex-shrink-0"
@@ -172,18 +177,19 @@ const ProfessionalNavbar = () => {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden items-center space-x-8 lg:flex">
-              <ul className="flex items-center space-x-8">
+            <div className="laptop-md:space-x-2.5 hidden min-w-0 flex-1 items-center justify-end space-x-2 lg:flex xl:space-x-6">
+              <ul className="laptop-md:space-x-2.5 flex items-center space-x-2 xl:space-x-6">
                 {navLinks.map((link, index) => (
                   <motion.li
                     key={link.name}
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 + 0.2 }}
+                    initial={{ opacity: mounted ? 1 : 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex-shrink-0"
                   >
                     <Link
                       href={link.href}
-                      className={`group relative px-4 py-2 text-base font-semibold transition-all duration-300 ${
+                      className={`laptop-md:px-1.5 laptop-md:text-sm group relative px-1.5 py-2 text-sm font-semibold transition-all duration-300 xl:px-4 xl:text-base ${
                         isActiveLink(link.href)
                           ? "text-primary-800 dark:text-accent-400"
                           : "text-gray-700 hover:text-primary-800 dark:text-gray-300 dark:hover:text-accent-400"
@@ -200,34 +206,41 @@ const ProfessionalNavbar = () => {
                 ))}
               </ul>
 
+              {/* Professional Search Toggle */}
+              <div className="flex-shrink-0">
+                <SearchToggle />
+              </div>
+
               {/* Theme Toggle */}
-              {mounted && (
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center">
                 <motion.button
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  className="rounded-xl bg-gray-100 p-3 text-gray-600 transition-all duration-300 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700"
+                  className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-gray-600 transition-all duration-300 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label="Toggle theme"
+                  style={{ opacity: mounted ? 1 : 0 }}
                 >
-                  {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+                  {mounted && (theme === "dark" ? <Sun size={20} /> : <Moon size={20} />)}
+                  {!mounted && <div className="h-5 w-5" />}
                 </motion.button>
-              )}
+              </div>
 
               {/* Enhanced CTA Button */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={{ scale: 1.05, y: -2 }}
+                initial={{ opacity: mounted ? 1 : 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                whileHover={{ scale: 1.02, y: -1 }}
                 whileTap={{ scale: 0.98 }}
-                className="group relative"
+                className="group relative flex-shrink-0"
               >
                 {/* Glowing background effect */}
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary-600 to-accent-500 opacity-60 blur-lg transition-opacity duration-300 group-hover:opacity-100" />
 
                 <Link
                   href="/contact"
-                  className="relative inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-primary-800 to-accent-500 px-8 py-4 font-bold text-white shadow-2xl transition-all duration-300 hover:from-primary-900 hover:to-accent-600"
+                  className="laptop-md:min-w-[90px] laptop-md:gap-1 laptop-md:px-3 laptop-md:py-2 laptop-md:text-xs relative inline-flex min-w-[90px] items-center justify-center gap-1 rounded-2xl bg-gradient-to-r from-primary-800 to-accent-500 px-3 py-2 text-xs font-bold text-white shadow-2xl transition-all duration-300 hover:from-primary-900 hover:to-accent-600 xl:min-w-[140px] xl:gap-2 xl:px-8 xl:py-4 xl:text-base"
                 >
                   <span>Get Quote</span>
                   <motion.div
@@ -241,42 +254,28 @@ const ProfessionalNavbar = () => {
                       ease: "easeInOut",
                     }}
                   >
-                    <ArrowUpRight
-                      size={18}
-                      className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
-                    />
+                    <ArrowUpRight className="laptop-md:h-4 laptop-md:w-4 h-3 w-3 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 xl:h-5 xl:w-5" />
                   </motion.div>
                 </Link>
-
-                {/* Shimmer effect */}
-                <motion.div
-                  animate={{ x: [-100, 100] }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    repeatDelay: 3,
-                  }}
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100"
-                  style={{ transform: "skewX(-20deg)" }}
-                />
               </motion.div>
             </div>
 
             {/* Mobile Menu Button */}
             <div className="flex items-center gap-3 lg:hidden">
               {/* Mobile Theme Toggle */}
-              {mounted && (
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
                 <motion.button
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  className="rounded-lg bg-gray-100 p-2 text-gray-600 transition-all duration-300 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-gray-600 transition-all duration-300 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700"
+                  style={{ opacity: mounted ? 1 : 0 }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label="Toggle theme"
                 >
-                  {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+                  {mounted && (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />)}
+                  {!mounted && <div className="h-[18px] w-[18px]" />}
                 </motion.button>
-              )}
+              </div>
 
               <motion.button
                 onClick={toggleSidebar}
@@ -339,7 +338,7 @@ const ProfessionalNavbar = () => {
                 damping: 30,
                 opacity: { duration: 0.2 },
               }}
-              className="fixed bottom-0 right-0 top-0 z-50 flex w-80 max-w-[85vw] flex-col border-l border-primary-200/30 bg-gradient-to-br from-white/95 via-white/90 to-primary-50/80 shadow-2xl backdrop-blur-2xl dark:border-primary-700/30 dark:from-slate-900/95 dark:via-slate-900/90 dark:to-primary-900/80"
+              className="fixed bottom-0 right-0 top-0 z-50 flex w-76  max-w-[85vw] flex-col border-l border-primary-200/30 bg-gradient-to-br from-white/95 via-white/90 to-primary-50/80 shadow-2xl backdrop-blur-2xl dark:border-primary-700/30 dark:from-slate-900/95 dark:via-slate-900/90 dark:to-primary-900/80"
             >
               {/* Animated background effects */}
               <div className="absolute inset-0 overflow-hidden">
@@ -395,7 +394,7 @@ const ProfessionalNavbar = () => {
               </div>
 
               {/* Enhanced Header */}
-              <div className="relative flex items-center justify-between border-b border-primary-200/30 p-6 dark:border-primary-700/30">
+              <div className="relative flex items-center justify-between border-b border-primary-200/30 p-4 dark:border-primary-700/30">
                 {/* Glowing border effect */}
                 <motion.div
                   animate={{ opacity: [0.3, 0.7, 0.3] }}
@@ -411,7 +410,7 @@ const ProfessionalNavbar = () => {
                   className="relative"
                 >
                   <motion.h2
-                    className="bg-gradient-to-r from-primary-700 via-accent-500 to-secondary-500 bg-clip-text text-xl font-bold text-transparent dark:from-white dark:via-accent-400 dark:to-secondary-400"
+                    className="bg-gradient-to-r from-primary-700 via-accent-500 to-secondary-500 bg-clip-text text-lg font-bold text-transparent dark:from-white dark:via-accent-400 dark:to-secondary-400"
                     animate={{
                       textShadow: [
                         "0 0 0px rgba(16,185,129,0)",
@@ -435,7 +434,7 @@ const ProfessionalNavbar = () => {
                       repeat: Infinity,
                       ease: "easeInOut",
                     }}
-                    className="absolute -right-6 -top-1 h-2 w-2 rounded-full bg-accent-400"
+                    className="absolute -right-5 -top-1 h-1.5 w-1.5 rounded-full bg-accent-400"
                   />
                 </motion.div>
 
@@ -450,20 +449,20 @@ const ProfessionalNavbar = () => {
 
                   <motion.button
                     onClick={closeSidebar}
-                    className="relative rounded-xl bg-gray-100/80 p-3 text-gray-600 backdrop-blur-sm transition-all duration-300 hover:bg-gray-200/80 dark:bg-gray-800/80 dark:text-gray-400 dark:hover:bg-gray-700/80"
+                    className="relative rounded-lg bg-gray-100/80 p-2 text-gray-600 backdrop-blur-sm transition-all duration-300 hover:bg-gray-200/80 dark:bg-gray-800/80 dark:text-gray-400 dark:hover:bg-gray-700/80"
                     initial={{ rotate: 0 }}
                     animate={{ rotate: [0, 180, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   >
-                    <X size={20} />
+                    <X size={18} />
                   </motion.button>
                 </motion.div>
               </div>
 
               {/* Enhanced Navigation */}
-              <div className="relative flex-1 overflow-y-auto px-6 py-8">
+              <div className="relative flex-1 overflow-y-auto px-4 py-5">
                 <motion.ul
-                  className="space-y-4"
+                  className="space-y-2.5"
                   initial="closed"
                   animate="open"
                   variants={{
@@ -515,7 +514,7 @@ const ProfessionalNavbar = () => {
                         <Link
                           href={link.href}
                           onClick={closeSidebar}
-                          className={`relative flex items-center justify-between rounded-2xl px-6 py-5 text-lg font-semibold backdrop-blur-sm transition-all duration-300 ${
+                          className={`relative flex items-center justify-between rounded-xl px-4 py-3.5 text-base font-semibold backdrop-blur-sm transition-all duration-300 ${
                             isActiveLink(link.href)
                               ? "bg-gradient-to-r from-primary-100/80 to-accent-50/80 text-primary-800 shadow-lg dark:from-primary-900/40 dark:to-accent-900/40 dark:text-accent-400"
                               : "text-gray-700 hover:bg-white/60 dark:text-gray-300 dark:hover:bg-slate-800/60"
@@ -539,7 +538,7 @@ const ProfessionalNavbar = () => {
                           {isActiveLink(link.href) ? (
                             <motion.div
                               layoutId="mobileActiveIndicator"
-                              className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-500 shadow-lg"
+                              className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-500 shadow-lg"
                               transition={{
                                 type: "spring",
                                 stiffness: 300,
@@ -553,7 +552,7 @@ const ProfessionalNavbar = () => {
                               }}
                             >
                               <motion.div
-                                className="h-3 w-3 rounded-full bg-white"
+                                className="h-2.5 w-2.5 rounded-full bg-white"
                                 animate={{ scale: [0.8, 1.2, 0.8] }}
                                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                               />
@@ -561,7 +560,7 @@ const ProfessionalNavbar = () => {
                           ) : (
                             <motion.div
                               whileHover={{ rotate: 45, scale: 1.2 }}
-                              className="h-6 w-6 rounded-full bg-gradient-to-r from-gray-300 to-gray-400 opacity-30 dark:from-gray-600 dark:to-gray-700"
+                              className="h-5 w-5 rounded-full bg-gradient-to-r from-gray-300 to-gray-400 opacity-30 dark:from-gray-600 dark:to-gray-700"
                             />
                           )}
                         </Link>
@@ -571,7 +570,7 @@ const ProfessionalNavbar = () => {
                           initial={{ scale: 0, opacity: 0 }}
                           animate={{ scale: 1, opacity: 0.6 }}
                           transition={{ delay: 0.5 + index * 0.1, duration: 0.4 }}
-                          className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-accent-400 to-secondary-500 text-xs font-bold text-white shadow-lg"
+                          className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-accent-400 to-secondary-500 text-xs font-bold text-white shadow-lg"
                         >
                           {index + 1}
                         </motion.div>
@@ -580,9 +579,29 @@ const ProfessionalNavbar = () => {
                   ))}
                 </motion.ul>
 
+                {/* Search Box in Mobile Menu */}
+                <motion.div
+                  className="relative border-t border-primary-200/30 px-4 py-4 dark:border-primary-700/30"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.6 }}
+                >
+                  {/* Glowing border effect */}
+                  <motion.div
+                    animate={{ opacity: [0.3, 0.7, 0.3] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute left-1/4 right-1/4 top-0 h-px bg-gradient-to-r from-transparent via-accent-400/50 to-transparent"
+                  />
+
+                  <div className="space-y-1.5">
+                    <h3 className="text-xs font-medium text-gray-500 dark:text-gray-400">Search</h3>
+                    <SearchBox placeholder="Search..." className="w-full" />
+                  </div>
+                </motion.div>
+
                 {/* Enhanced Contact Info in Mobile Menu */}
                 <motion.div
-                  className="relative mt-10 space-y-6 border-t border-primary-200/30 pt-8 dark:border-primary-700/30"
+                  className="relative mt-6 space-y-4 border-t border-primary-200/30 pt-5 dark:border-primary-700/30"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8, duration: 0.6 }}
@@ -595,7 +614,7 @@ const ProfessionalNavbar = () => {
                   />
 
                   <motion.div
-                    className="text-sm font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300"
+                    className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300"
                     animate={{
                       textShadow: [
                         "0 0 0px rgba(16,185,129,0)",
@@ -608,14 +627,24 @@ const ProfessionalNavbar = () => {
                     Get in Touch
                   </motion.div>
 
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {[
-                      { icon: Phone, text: "+234 812 312 1369", link: "tel:+2348123121369", delay: 0.9 },
-                      { icon: Mail, text: "info@codemantixcollective.com", link: "mailto:info@codemantixcollective.com", delay: 1.0 },
+                      {
+                        icon: Phone,
+                        text: "+234 812 312 1369",
+                        link: "tel:+2348123121369",
+                        delay: 0.9,
+                      },
+                      {
+                        icon: Mail,
+                        text: "info@codemantixcollective.com",
+                        link: "mailto:info@codemantixcollective.com",
+                        delay: 1.0,
+                      },
                     ].map(({ icon: Icon, text, link, delay }, index) => (
                       <motion.div
                         key={index}
-                        className="group flex items-center gap-4"
+                        className="group flex items-center gap-3"
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay, duration: 0.6 }}
@@ -624,12 +653,12 @@ const ProfessionalNavbar = () => {
                         <motion.div
                           animate={{ rotate: [0, 360] }}
                           transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                          className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-accent-400/20 to-secondary-400/20 backdrop-blur-sm"
+                          className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-accent-400/20 to-secondary-400/20 backdrop-blur-sm"
                         >
-                          <Icon className="h-5 w-5 text-accent-500" />
+                          <Icon className="h-4 w-4 text-accent-500" />
                         </motion.div>
                         <Link href={link} onClick={closeSidebar} className="flex-1">
-                          <span className="text-sm font-medium text-gray-600 transition-colors duration-300 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-200">
+                          <span className="text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-200">
                             {text}
                           </span>
                         </Link>
@@ -641,64 +670,61 @@ const ProfessionalNavbar = () => {
 
               {/* Enhanced Footer CTA */}
               <motion.div
-                className="relative border-t border-primary-200/30 p-6 dark:border-primary-700/30"
+                className="relative border-t border-primary-200/30 p-4 dark:border-primary-700/30"
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1.1, duration: 0.6 }}
-                >
+              >
                 <Link href="/contact" onClick={closeSidebar}>
-                {/* Top glowing border */}
-                <motion.div
-                  animate={{ opacity: [0.3, 0.7, 0.3] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute left-1/4 right-1/4 top-0 h-px bg-gradient-to-r from-transparent via-accent-400/50 to-transparent"
-                />
+                  {/* Top glowing border */}
+                  <motion.div
+                    animate={{ opacity: [0.3, 0.7, 0.3] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute left-1/4 right-1/4 top-0 h-px bg-gradient-to-r from-transparent via-accent-400/50 to-transparent"
+                  />
 
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -3 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="group relative"
-                >
-                  {/* Glowing background effect */}
-                  <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary-600 to-accent-500 opacity-60 blur-lg transition-opacity duration-300 group-hover:opacity-100" />
-
-                  <span
-                    
-                    className="relative flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-primary-800 to-accent-600 px-8 py-5 font-bold text-white shadow-2xl transition-all duration-300 hover:from-primary-900 hover:to-accent-700"
+                  <motion.div
+                    whileHover={{ scale: 1.05, y: -3 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="group relative"
                   >
-                    <span className="text-lg ">Get Your Quote</span>
+                    {/* Glowing background effect */}
+                    <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary-600 to-accent-500 opacity-60 blur-lg transition-opacity duration-300 group-hover:opacity-100" />
+
+                    <span className="relative flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary-800 to-accent-600 px-6 py-3.5 font-bold text-white shadow-2xl transition-all duration-300 hover:from-primary-900 hover:to-accent-700">
+                      <span className="text-base">Get Your Quote</span>
+                      <motion.div
+                        animate={{
+                          x: [0, 3, 0],
+                          y: [0, -1, 0],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      >
+                        <ArrowUpRight
+                          size={18}
+                          className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
+                        />
+                      </motion.div>
+                    </span>
+
+                    {/* Shimmer effect */}
                     <motion.div
-                      animate={{
-                        x: [0, 3, 0],
-                        y: [0, -1, 0],
-                      }}
+                      animate={{ x: [-100, 100] }}
                       transition={{
                         duration: 2,
                         repeat: Infinity,
                         ease: "easeInOut",
+                        repeatDelay: 3,
                       }}
-                    >
-                      <ArrowUpRight
-                        size={20}
-                        className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
-                      />
-                    </motion.div>
-                  </span>
-
-                  {/* Shimmer effect */}
-                  <motion.div
-                    animate={{ x: [-100, 100] }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      repeatDelay: 3,
-                    }}
-                    className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100"
-                    style={{ transform: "skewX(-20deg)" }}
-                  />
+                      className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100"
+                      style={{ transform: "skewX(-20deg)" }}
+                    />
                   </motion.div>
-                  </Link>
+                </Link>
               </motion.div>
             </motion.div>
           </>
