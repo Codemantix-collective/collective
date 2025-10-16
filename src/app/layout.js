@@ -6,6 +6,7 @@ import "./globals.css";
 import ProfessionalNavbar from "../components/layout/ProfessionalNavbar.jsx";
 import ProfessionalFooter from "../components/layout/ProfessionalFooter.jsx";
 import { ThemeProvider } from "../components/providers/ThemeProvider.jsx";
+import { ScrollToTop } from "../components/ui";
 import {
   OrganizationSchema,
   WebsiteSchema,
@@ -144,6 +145,7 @@ export default function RootLayout({ children }) {
             <main className="flex-1">{children}</main>
             <ProfessionalFooter />
           </div>
+          <ScrollToTop />
           <Toaster
             position="top-right"
             toastOptions={{

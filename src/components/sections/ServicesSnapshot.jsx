@@ -26,7 +26,7 @@ const coreServices = [
     color: "primary",
     href: "/services#web-development",
     features: ["React & Next.js", "Node.js APIs", "Cloud Deployment", "Performance Optimization"],
-    stats: { projects: "150+", satisfaction: "98%" },
+    stats: { projects: "20+", satisfaction: "98%" },
   },
   {
     name: "UI/UX Design",
@@ -38,7 +38,7 @@ const coreServices = [
     color: "accent",
     href: "/services#ui-ux",
     features: ["User Research", "Prototyping", "Design Systems", "Usability Testing"],
-    stats: { projects: "120+", satisfaction: "99%" },
+    stats: { projects: "20+", satisfaction: "99%" },
   },
   {
     name: "Graphics Design",
@@ -50,7 +50,7 @@ const coreServices = [
     color: "secondary",
     href: "/services#graphics-design",
     features: ["Brand Identity", "Print Design", "Digital Assets", "Marketing Materials"],
-    stats: { projects: "200+", satisfaction: "97%" },
+    stats: { projects: "20+", satisfaction: "97%" },
   },
   {
     name: "Data Analytics",
@@ -62,7 +62,7 @@ const coreServices = [
     color: "gradient",
     href: "/services#data-analysis",
     features: ["Data Visualization", "ML Models", "Business Intelligence", "Predictive Analytics"],
-    stats: { projects: "80+", satisfaction: "100%" },
+    stats: { projects: "20+", satisfaction: "100%" },
   },
 ];
 

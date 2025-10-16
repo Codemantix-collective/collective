@@ -44,7 +44,7 @@ export default function BrandStory() {
   return (
     <section
       ref={elementRef}
-      className="relative overflow-hidden bg-gradient-to-br from-gray-50/50 via-primary-50/30 to-accent-50/20 px-4 py-24 md:px-8 lg:px-16"
+      className="relative overflow-hidden bg-gradient-to-br from-white via-primary-50/30 to-accent-50/20 py-32 dark:from-gray-900 dark:via-primary-900/50 dark:to-gray-800"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 overflow-hidden">
@@ -52,10 +52,10 @@ export default function BrandStory() {
           className="opacity-3 absolute inset-0"
           style={{
             backgroundImage: `
-              radial-gradient(circle at 20% 20%, rgba(30, 58, 138, 0.15) 2px, transparent 2px),
-              radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.2) 1px, transparent 1px)
+              radial-gradient(circle at 25% 25%, rgba(30, 58, 138, 0.15) 2px, transparent 2px),
+              radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.1) 1px, transparent 1px)
             `,
-            backgroundSize: "100px 100px, 80px 80px",
+            backgroundSize: "90px 90px, 70px 70px",
           }}
         />
 
@@ -123,7 +123,7 @@ export default function BrandStory() {
 
           <motion.p
             variants={itemVariants}
-            className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-300"
+            className="mx-auto max-w-3xl text-xl leading-relaxed "
           >
             From a bold vision to a thriving collective, discover how we're transforming the digital
             landscape one innovative solution at a time.

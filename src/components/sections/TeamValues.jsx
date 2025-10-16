@@ -114,7 +114,7 @@ export default function TeamValues() {
   return (
     <section
       ref={elementRef}
-      className="relative overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-accent-900 py-24"
+      className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-primary-100 to-accent-50 py-24 dark:from-primary-900 dark:via-primary-800 dark:to-accent-900"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -191,12 +191,12 @@ export default function TeamValues() {
           className="mb-20"
         >
           <motion.div variants={itemVariants} className="mb-16 text-center">
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-500/10 px-6 py-3 text-sm font-semibold text-accent-300">
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-500/10 px-6 py-3 text-sm font-semibold text-accent-600 dark:border-accent-500/20 dark:bg-accent-500/10 dark:text-accent-300">
               <HeartIcon className="h-5 w-5" />
               Our Team Values
             </span>
 
-            <h2 className="mb-6 text-4xl font-bold leading-tight text-white md:text-6xl">
+            <h2 className="mb-6 text-4xl font-bold leading-tight text-primary-900 dark:text-white md:text-6xl">
               What{" "}
               <span className="bg-gradient-to-r from-accent-400 to-secondary-400 bg-clip-text text-transparent">
                 Drives
@@ -204,7 +204,7 @@ export default function TeamValues() {
               Us
             </h2>
 
-            <p className="mx-auto max-w-3xl md:text-xl text-sm leading-relaxed text-gray-300">
+            <p className="mx-auto max-w-3xl text-sm leading-relaxed text-gray-700 dark:text-gray-300 md:text-xl">
               The core principles and values that guide our team culture and define how we work
               together to achieve excellence.
             </p>
@@ -220,7 +220,7 @@ export default function TeamValues() {
                   whileHover="hover"
                   className="group relative"
                 >
-                  <div className="relative h-full rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm transition-all duration-500 hover:bg-white/15">
+                  <div className="relative h-full rounded-2xl border border-primary-200 bg-white/80 p-6 backdrop-blur-sm transition-all duration-500 hover:bg-white dark:border-white/20 dark:bg-white/10 dark:hover:bg-white/15">
                     {/* Icon */}
                     <motion.div
                       whileHover={{ rotate: 15, scale: 1.2 }}
@@ -242,11 +242,13 @@ export default function TeamValues() {
                     </motion.div>
 
                     {/* Content */}
-                    <h3 className="mb-3 text-lg font-bold text-white transition-colors group-hover:text-accent-300">
+                    <h3 className="mb-3 text-lg font-bold text-primary-900 transition-colors group-hover:text-accent-600 dark:text-white dark:group-hover:text-accent-300">
                       {value.title}
                     </h3>
 
-                    <p className="text-sm leading-relaxed text-gray-300">{value.description}</p>
+                    <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+                      {value.description}
+                    </p>
 
                     {/* Progress Line */}
                     <div
@@ -272,19 +274,19 @@ export default function TeamValues() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.div variants={itemVariants} className="mb-16 text-center">
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-secondary-500/20 bg-secondary-500/10 px-6 py-3 text-sm font-semibold text-secondary-300">
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-secondary-500/20 bg-secondary-500/10 px-6 py-3 text-sm font-semibold text-secondary-600 dark:border-secondary-500/20 dark:bg-secondary-500/10 dark:text-secondary-300">
               <SparklesIcon className="h-5 w-5" />
               Our Work Culture
             </span>
 
-            <h2 className="mb-6 text-4xl font-bold leading-tight text-white md:text-5xl">
+            <h2 className="mb-6 text-4xl font-bold leading-tight text-primary-900 dark:text-white md:text-5xl">
               How We{" "}
               <span className="bg-gradient-to-r from-secondary-400 to-accent-400 bg-clip-text text-transparent">
                 Work
               </span>
             </h2>
 
-            <p className="mx-auto max-w-3xl md:text-xl text-sm leading-relaxed text-gray-300">
+            <p className="mx-auto max-w-3xl text-sm leading-relaxed text-gray-700 dark:text-gray-300 md:text-xl">
               Creating an environment where innovation thrives, creativity flourishes, and every
               team member can reach their full potential.
             </p>
@@ -296,20 +298,22 @@ export default function TeamValues() {
                 key={index}
                 variants={cardVariants}
                 whileHover="hover"
-                className="group text-center"
+                className="group relative text-center"
               >
-                <div className="relative rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-500 hover:bg-white/10">
+                <div className="relative h-full rounded-3xl border border-primary-200 bg-white/80 p-8 backdrop-blur-sm transition-all duration-500 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
                   {/* Icon */}
                   <div className="mb-6 text-6xl transition-transform duration-300 group-hover:scale-110">
                     {culture.icon}
                   </div>
 
                   {/* Content */}
-                  <h3 className="mb-4 text-xl font-bold text-white transition-colors group-hover:text-accent-300">
+                  <h3 className="mb-4 text-xl font-bold text-primary-900 transition-colors group-hover:text-accent-600 dark:text-white dark:group-hover:text-accent-300">
                     {culture.title}
                   </h3>
 
-                  <p className="leading-relaxed text-gray-300">{culture.description}</p>
+                  <p className="leading-relaxed text-gray-700 dark:text-gray-300">
+                    {culture.description}
+                  </p>
 
                   {/* Decorative Element */}
                   <div className="mx-auto mt-6 h-1 w-16 rounded-full bg-gradient-to-r from-accent-400 to-secondary-400 opacity-0 transition-all duration-500 group-hover:opacity-100"></div>
@@ -330,10 +334,10 @@ export default function TeamValues() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <div className="inline-flex items-center gap-4 text-lg text-gray-300">
-            <BoltIcon className="h-6 w-6 text-accent-400" />
+          <div className="inline-flex items-center gap-4 text-lg text-gray-700 dark:text-gray-300">
+            <BoltIcon className="h-6 w-6 text-accent-500 dark:text-accent-400" />
             <span>Ready to join our amazing team?</span>
-            <HeartIcon className="h-6 w-6 text-secondary-400" />
+            <HeartIcon className="h-6 w-6 text-secondary-500 dark:text-secondary-400" />
           </div>
 
           <div className="mt-6">

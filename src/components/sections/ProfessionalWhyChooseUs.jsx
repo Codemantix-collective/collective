@@ -53,7 +53,7 @@ const reasons = [
     icon: TrophyIcon,
     title: "Proven Success",
     description:
-      "200+ successful projects delivered across various industries with 98% client satisfaction rate.",
+      "60+ successful projects delivered across various industries with 98% client satisfaction rate.",
     gradient: "from-indigo-500 to-purple-600",
   },
 ];

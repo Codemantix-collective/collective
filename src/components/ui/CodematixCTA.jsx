@@ -104,8 +104,7 @@ export default function CodematixCTA({
         <div className="mx-auto max-w-4xl text-center">
           {/* Enhanced Header */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="mb-12"
@@ -194,8 +193,7 @@ export default function CodematixCTA({
             {/* Enhanced Title */}
             <motion.h2
               className="relative text-4xl font-bold text-white sm:text-5xl lg:text-6xl xl:text-7xl"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+             
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
@@ -211,8 +209,7 @@ export default function CodematixCTA({
 
           {/* Description */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+           
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mx-auto mb-12 max-w-2xl text-xl leading-relaxed text-gray-300"
@@ -222,8 +219,7 @@ export default function CodematixCTA({
 
           {/* Enhanced CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+           
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col items-center justify-center gap-6 sm:flex-row"
@@ -280,14 +276,13 @@ export default function CodematixCTA({
             className="mt-20 grid grid-cols-1 gap-8 sm:grid-cols-3"
           >
             {[
-              { number: "100+", label: "Projects Delivered", color: "accent", icon: Rocket },
+              { number: "60+", label: "Projects Delivered", color: "accent", icon: Rocket },
               { number: "50+", label: "Happy Clients", color: "secondary", icon: Star },
               { number: "24/7", label: "Support Available", color: "white", icon: Zap },
             ].map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -5 }}
@@ -332,8 +327,7 @@ export default function CodematixCTA({
 
                   {/* Number with count-up animation */}
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                   
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 1 + index * 0.1 }}
                     className={`text-4xl font-bold ${

@@ -165,10 +165,15 @@ export default function ProjectCarouselPro() {
   // Update navigation refs when Swiper is ready
   useEffect(() => {
     if (swiperRef && navigationPrevRef.current && navigationNextRef.current) {
-      swiperRef.params.navigation.prevEl = navigationPrevRef.current;
-      swiperRef.params.navigation.nextEl = navigationNextRef.current;
-      swiperRef.navigation.init();
-      swiperRef.navigation.update();
+      // Ensure navigation object exists before accessing it
+      if (swiperRef.params && swiperRef.params.navigation) {
+        swiperRef.params.navigation.prevEl = navigationPrevRef.current;
+        swiperRef.params.navigation.nextEl = navigationNextRef.current;
+      }
+      if (swiperRef.navigation) {
+        swiperRef.navigation.init();
+        swiperRef.navigation.update();
+      }
     }
   }, [swiperRef]);
 
@@ -382,7 +387,7 @@ export default function ProjectCarouselPro() {
             className="relative min-h-[320px] sm:min-h-[420px] md:min-h-[480px] lg:min-h-[520px]"
           >
             {/* Custom Navigation Buttons */}
-            <div className="absolute -left-2 top-1/2 z-20  -translate-y-1/2 sm:-left-6 lg:-left-12">
+            <div className="absolute -left-2 top-1/2 z-20 -translate-y-1/2 sm:-left-6 lg:-left-12">
               <motion.button
                 ref={navigationPrevRef}
                 whileHover={{ scale: 1.1, x: -2 }}
@@ -399,7 +404,7 @@ export default function ProjectCarouselPro() {
                 ref={navigationNextRef}
                 whileHover={{ scale: 1.1, x: 2 }}
                 whileTap={{ scale: 0.9 }}
-                className="rounded-full border border-white/20  bg-white/90 p-2 shadow-md backdrop-blur-sm transition-all duration-300 hover:bg-white hover:shadow-2xl disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700/20 dark:bg-gray-800/90 dark:hover:bg-gray-800 sm:p-3 lg:p-4"
+                className="rounded-full border border-white/20 bg-white/90 p-2 shadow-md backdrop-blur-sm transition-all duration-300 hover:bg-white hover:shadow-2xl disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700/20 dark:bg-gray-800/90 dark:hover:bg-gray-800 sm:p-3 lg:p-4"
                 aria-label="Next slide"
               >
                 <ChevronRightIcon className="h-4 w-4 text-gray-700 dark:text-gray-300 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />

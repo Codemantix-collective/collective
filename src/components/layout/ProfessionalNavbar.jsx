@@ -115,7 +115,7 @@ const ProfessionalNavbar = () => {
 
       {/* Enhanced Main Navigation */}
       <motion.nav
-        initial={{ y: -100 }}
+        initial={{ y: -120 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={`sticky top-0 z-50 transition-all duration-700 ${

@@ -19,14 +19,14 @@ import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 
 const teamStats = [
   {
-    number: "25+",
+    number: "10+",
     label: "Expert Members",
     icon: UsersIcon,
     color: "from-primary-500 to-primary-600",
   },
-  { number: "15+", label: "Countries", icon: GlobeAltIcon, color: "from-accent-500 to-accent-600" },
+  { number: "1", label: "Country", icon: GlobeAltIcon, color: "from-accent-500 to-accent-600" },
   {
-    number: "200+",
+    number: "60+",
     label: "Projects",
     icon: TrophyIcon,
     color: "from-secondary-500 to-secondary-600",
@@ -106,7 +106,7 @@ export default function TeamOverview() {
   return (
     <section
       ref={elementRef}
-      className="relative overflow-hidden bg-gradient-to-br from-gray-50/50 via-primary-50/30 to-accent-50/20 py-24"
+      className="relative overflow-hidden bg-gradient-to-br from-white via-primary-50/30 to-accent-50/20 py-32 dark:from-gray-900 dark:via-primary-900/50 dark:to-gray-800"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 overflow-hidden">
@@ -256,7 +256,7 @@ export default function TeamOverview() {
                 >
                   <div className="flex items-center gap-2 text-primary-900">
                     <HeartIcon className="h-5 w-5 text-accent-500" />
-                    <span className="text-sm font-semibold">25+ Experts</span>
+                    <span className="text-sm font-semibold">10+ Experts</span>
                   </div>
                 </motion.div>
 

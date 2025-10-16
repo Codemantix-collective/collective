@@ -78,7 +78,7 @@ const missionVision = [
 
 const impactStats = [
   { number: "50+", label: "Countries Served", icon: GlobeAltIcon },
-  { number: "200+", label: "Projects Delivered", icon: RocketLaunchIcon },
+  { number: "60+", label: "Projects Delivered", icon: RocketLaunchIcon },
   { number: "99.9%", label: "Client Satisfaction", icon: StarIcon },
   { number: "24/7", label: "Support Available", icon: BoltIcon },
 ];

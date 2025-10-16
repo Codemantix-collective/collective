@@ -51,7 +51,7 @@ const projectHighlights = [
 ];
 
 const projectStats = [
-  { label: "Projects Completed", value: "50+", icon: StarIcon },
+  { label: "Projects Completed", value: "60+", icon: StarIcon },
   { label: "Client Satisfaction", value: "98%", icon: SparklesIcon },
   { label: "Design Awards", value: "15+", icon: BoltIcon },
   { label: "Happy Clients", value: "30+", icon: EyeIcon },
@@ -215,8 +215,7 @@ export default function ProjectsHero() {
       <div className="container relative z-10 mx-auto flex min-h-screen items-center px-6 pb-16">
         <motion.div
           className="grid w-full items-center gap-12 lg:grid-cols-2 lg:gap-16"
-          variants={containerVariants}
-          initial="hidden"
+         
           animate="visible"
         >
           {/* Content Section */}

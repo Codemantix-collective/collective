@@ -11,5 +11,6 @@ export { default as ClientOnly } from "./ClientOnly.jsx";
 export { default as SearchBox } from "./SearchBox.jsx";
 export { default as SearchToggle } from "./SearchToggle.jsx";
 export { default as NotFoundClient } from "./NotFoundClient.jsx";
+export { default as ScrollToTop } from "./ScrollToTop.jsx";
 export * from "./Navlinks.jsx";
 export { default as ProjectCardSkeleton, ProjectGridSkeleton } from "./ProjectSkeleton.jsx";

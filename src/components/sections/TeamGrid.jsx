@@ -177,7 +177,7 @@ export default function TeamGrid() {
   return (
     <section
       ref={elementRef}
-      className="relative overflow-hidden bg-gradient-to-br from-zinc-50/70 via-primary-50/30 to-accent-50/20 py-24"
+      className="relative overflow-hidden bg-gradient-to-br from-white via-primary-50/30 to-accent-50/20 py-32 dark:from-gray-900 dark:via-primary-900/50 dark:to-gray-800"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 overflow-hidden opacity-5">
@@ -193,10 +193,10 @@ export default function TeamGrid() {
           className="absolute inset-0"
           style={{
             backgroundImage: `
-              radial-gradient(circle at 20% 20%, rgba(30, 58, 138, 0.3) 2px, transparent 2px),
-              radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.2) 1px, transparent 1px)
+              radial-gradient(circle at 25% 25%, rgba(30, 58, 138, 0.15) 2px, transparent 2px),
+              radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.1) 1px, transparent 1px)
             `,
-            backgroundSize: "100px 100px, 80px 80px",
+            backgroundSize: "90px 90px, 70px 70px",
           }}
         />
       </div>
@@ -221,7 +221,7 @@ export default function TeamGrid() {
             </span>
           </h2>
 
-          <p className="mx-auto max-w-3xl text-sm md:text-xl leading-relaxed text-gray-300">
+          <p className="mx-auto max-w-3xl text-sm leading-relaxed  md:text-xl">
             Get to know the talented individuals who make our collective a powerhouse of innovation
             and creativity.
           </p>
@@ -242,7 +242,7 @@ export default function TeamGrid() {
               className={`rounded-full px-6 py-3 font-semibold transition-all duration-300 ${
                 selectedDepartment === dept
                   ? "scale-105 bg-gradient-to-r from-primary-500 to-accent-500 text-white shadow-lg"
-                  : "border border-gray-200 bg-white text-gray-600 hover:bg-primary-50 hover:text-primary-600"
+                  : "border border-gray-200 bg-white text-gray-600 hover:bg-primary-50 hover:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-primary-900/30 dark:hover:text-primary-400"
               }`}
             >
               {dept}
@@ -268,7 +268,7 @@ export default function TeamGrid() {
                 onClick={() => setSelectedMember(member)}
                 className="group relative cursor-pointer"
               >
-                <div className="relative h-full rounded-3xl border border-white/50 bg-white/80 p-6 shadow-xl backdrop-blur-sm transition-all duration-500 hover:shadow-2xl">
+                <div className="relative h-full rounded-3xl border border-white/50 bg-white/80 p-6 shadow-xl backdrop-blur-sm transition-all duration-500 hover:shadow-2xl dark:border-gray-700/50 dark:bg-gray-800/80">
                   {/* Background Gradient */}
                   <div
                     className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${member.gradient} opacity-0 transition-all duration-500 group-hover:opacity-5`}
@@ -292,7 +292,9 @@ export default function TeamGrid() {
 
                     {/* Member Info */}
                     <div className="text-center">
-                      <h3 className="mb-2 text-xl font-bold text-primary-900">{member.name}</h3>
+                      <h3 className="mb-2 text-xl font-bold text-primary-900 dark:text-white">
+                        {member.name}
+                      </h3>
 
                       <p
                         className={`mb-3 bg-gradient-to-r bg-clip-text text-sm font-semibold text-transparent ${member.gradient}`}
@@ -300,7 +302,7 @@ export default function TeamGrid() {
                         {member.role}
                       </p>
 
-                      <div className="mb-4 flex items-center justify-center gap-1 text-sm text-gray-500">
+                      <div className="mb-4 flex items-center justify-center gap-1 text-sm text-gray-500 dark:text-gray-400">
                         <MapPinIcon className="h-4 w-4" />
                         <span>{member.location}</span>
                       </div>
@@ -308,24 +310,24 @@ export default function TeamGrid() {
                       {/* Stats */}
                       <div className="mb-6 grid grid-cols-2 gap-4">
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-primary-900">
+                          <div className="text-2xl font-bold text-primary-900 dark:text-white">
                             {member.projects}
                           </div>
-                          <div className="text-xs text-gray-500">Projects</div>
+                          <div className="text-xs text-gray-500 dark:text-gray-400">Projects</div>
                         </div>
                         <div className="text-center">
                           <div className="flex items-center justify-center gap-1">
-                            <span className="text-2xl font-bold text-primary-900">
+                            <span className="text-2xl font-bold text-primary-900 dark:text-white">
                               {member.rating}
                             </span>
                             <StarIcon className="h-4 w-4 fill-current text-yellow-500" />
                           </div>
-                          <div className="text-xs text-gray-500">Rating</div>
+                          <div className="text-xs text-gray-500 dark:text-gray-400">Rating</div>
                         </div>
                       </div>
 
                       {/* Bio Preview */}
-                      <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-gray-600">
+                      <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                         {member.bio}
                       </p>
 
@@ -334,13 +336,13 @@ export default function TeamGrid() {
                         {member.skills.slice(0, 3).map((skill, index) => (
                           <span
                             key={index}
-                            className="rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-600"
+                            className="rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-600 dark:bg-primary-900/30 dark:text-primary-400"
                           >
                             {skill}
                           </span>
                         ))}
                         {member.skills.length > 3 && (
-                          <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-500">
+                          <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-500 dark:bg-gray-700 dark:text-gray-400">
                             +{member.skills.length - 3}
                           </span>
                         )}
@@ -348,7 +350,7 @@ export default function TeamGrid() {
 
                       {/* View Profile Button */}
                       <div className="text-center">
-                        <button className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 group-hover:underline">
+                        <button className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 group-hover:underline dark:text-primary-400 dark:hover:text-primary-300">
                           View Profile
                           <motion.span
                             animate={{ x: [0, 5, 0] }}
@@ -387,12 +389,12 @@ export default function TeamGrid() {
                 animate="visible"
                 exit="exit"
                 onClick={(e) => e.stopPropagation()}
-                className="max-h-[80vh] scrollbar-hide w-full max-w-2xl overflow-y-auto rounded-3xl bg-white p-8"
+                className="scrollbar-hide max-h-[80vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-white p-8 dark:bg-gray-800"
               >
                 {/* Close Button */}
                 <button
                   onClick={() => setSelectedMember(null)}
-                  className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 transition-colors hover:bg-gray-200"
+                  className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 transition-colors hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600"
                 >
                   ✕
                 </button>
@@ -408,7 +410,7 @@ export default function TeamGrid() {
                     />
                   </div>
 
-                  <h2 className="mb-2 text-3xl font-bold text-primary-900">
+                  <h2 className="mb-2 text-3xl font-bold text-primary-900 dark:text-white">
                     {selectedMember.name}
                   </h2>
 
@@ -420,38 +422,50 @@ export default function TeamGrid() {
 
                   <div className="mb-8 grid grid-cols-2 gap-4 md:grid-cols-4">
                     <div className="text-center">
-                      <MapPinIcon className="mx-auto mb-2 h-6 w-6 text-gray-400" />
-                      <div className="text-sm text-gray-600">{selectedMember.location}</div>
+                      <MapPinIcon className="mx-auto mb-2 h-6 w-6 text-gray-400 dark:text-gray-500" />
+                      <div className="text-sm text-gray-600 dark:text-gray-300">
+                        {selectedMember.location}
+                      </div>
                     </div>
                     <div className="text-center">
-                      <BriefcaseIcon className="mx-auto mb-2 h-6 w-6 text-gray-400" />
-                      <div className="text-sm text-gray-600">{selectedMember.experience}</div>
+                      <BriefcaseIcon className="mx-auto mb-2 h-6 w-6 text-gray-400 dark:text-gray-500" />
+                      <div className="text-sm text-gray-600 dark:text-gray-300">
+                        {selectedMember.experience}
+                      </div>
                     </div>
                     <div className="text-center">
-                      <AcademicCapIcon className="mx-auto mb-2 h-6 w-6 text-gray-400" />
-                      <div className="text-sm text-gray-600">{selectedMember.education}</div>
+                      <AcademicCapIcon className="mx-auto mb-2 h-6 w-6 text-gray-400 dark:text-gray-500" />
+                      <div className="text-sm text-gray-600 dark:text-gray-300">
+                        {selectedMember.education}
+                      </div>
                     </div>
                     <div className="text-center">
                       <StarIcon className="mx-auto mb-2 h-6 w-6 fill-current text-yellow-500" />
-                      <div className="text-sm text-gray-600">{selectedMember.rating}/5.0</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-300">
+                        {selectedMember.rating}/5.0
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Bio */}
                 <div className="mb-8">
-                  <h3 className="mb-4 text-xl font-bold text-primary-900">About</h3>
-                  <p className="leading-relaxed text-gray-600">{selectedMember.bio}</p>
+                  <h3 className="mb-4 text-xl font-bold text-primary-900 dark:text-white">About</h3>
+                  <p className="leading-relaxed text-gray-600 dark:text-gray-300">
+                    {selectedMember.bio}
+                  </p>
                 </div>
 
                 {/* Skills */}
                 <div className="mb-8">
-                  <h3 className="mb-4 text-xl font-bold text-primary-900">Skills & Technologies</h3>
+                  <h3 className="mb-4 text-xl font-bold text-primary-900 dark:text-white">
+                    Skills & Technologies
+                  </h3>
                   <div className="flex flex-wrap gap-3">
                     {selectedMember.skills.map((skill, index) => (
                       <span
                         key={index}
-                        className="rounded-full bg-primary-50 px-4 py-2 font-medium text-primary-600"
+                        className="rounded-full bg-primary-50 px-4 py-2 font-medium text-primary-600 dark:bg-primary-900/30 dark:text-primary-400"
                       >
                         {skill}
                       </span>
@@ -461,7 +475,9 @@ export default function TeamGrid() {
 
                 {/* Specialties */}
                 <div>
-                  <h3 className="mb-4 text-xl font-bold text-primary-900">Specialties</h3>
+                  <h3 className="mb-4 text-xl font-bold text-primary-900 dark:text-white">
+                    Specialties
+                  </h3>
                   <div className="flex flex-wrap gap-3">
                     {selectedMember.specialties.map((specialty, index) => (
                       <span

@@ -20,10 +20,10 @@ import {
 import Image from "next/image";
 
 const teamStats = [
-  { number: "25+", label: "Expert Members", icon: UsersIcon },
+  { number: "10+", label: "Expert Members", icon: UsersIcon },
   { number: "15+", label: "Countries", icon: GlobeAltIcon },
-  { number: "200+", label: "Projects", icon: RocketLaunchIcon },
-  { number: "5", label: "Years Experience", icon: TrophyIcon },
+  { number: "60+", label: "Projects", icon: RocketLaunchIcon },
+  { number: "7", label: "Years Experience", icon: TrophyIcon },
 ];
 
 const expertiseAreas = [

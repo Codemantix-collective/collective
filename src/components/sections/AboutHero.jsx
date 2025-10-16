@@ -18,10 +18,10 @@ import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 
 // Company achievements and values
 const achievements = [
-  { label: "Years of Excellence", value: "10+", icon: TrophyIcon },
+  { label: "Years of Excellence", value: "3+", icon: TrophyIcon },
   { label: "Happy Clients", value: "50+", icon: HeartIcon },
-  { label: "Projects Delivered", value: "200+", icon: RocketLaunchIcon },
-  { label: "Team Members", value: "25+", icon: UsersIcon },
+  { label: "Projects Delivered", value: "60+", icon: RocketLaunchIcon },
+  { label: "Team Members", value: "10+", icon: UsersIcon },
 ];
 
 const coreValues = [

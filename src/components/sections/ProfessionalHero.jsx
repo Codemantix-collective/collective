@@ -50,10 +50,10 @@ const techServices = [
 ];
 
 const companyStats = [
-  { label: "Projects Delivered", value: "200+", icon: CheckCircleIcon },
+  { label: "Projects Delivered", value: "60+", icon: CheckCircleIcon },
   { label: "Happy Clients", value: "50+", icon: UsersIcon },
-  { label: "Years Experience", value: "10+", icon: ArrowTrendingUpIcon },
-  { label: "Team Members", value: "25+", icon: TrophyIcon },
+  { label: "Years Experience", value: "3+", icon: ArrowTrendingUpIcon },
+  { label: "Team Members", value: "10+", icon: TrophyIcon },
 ];
 
 const trustIndicators = [
@@ -238,22 +238,19 @@ export default function ProfessionalHero() {
             <motion.div variants={itemVariants} className="space-y-6">
               <motion.h1
                 className="relative text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl xl:text-6xl"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
+              
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               >
                 <motion.span
                   className="block text-gray-900 dark:text-gray-100"
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
+                 
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
                   Digital Solutions That
                 </motion.span>
                 <motion.span
                   className="relative block bg-gradient-to-r from-primary-600 via-accent-500 to-secondary-500 bg-clip-text text-transparent"
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
+                 
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
                   Drive Success
@@ -286,8 +283,7 @@ export default function ProfessionalHero() {
 
               <motion.p
                 className="max-w-2xl text-xl leading-relaxed text-gray-600 dark:text-gray-300 lg:text-xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+              
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 We transform businesses through{" "}
@@ -372,13 +368,13 @@ export default function ProfessionalHero() {
                       initial={{ opacity: 0, y: 20, x: 30 }}
                       animate={{ opacity: 1, y: 0, x: 0 }}
                       exit={{ opacity: 0, y: -20, x: -30 }}
-                      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                      transition={{ duration: 0, ease: [0.16, 1, 0.3, 1] }}
                     >
                       <h3 className="mb-3 text-2xl font-bold text-gray-900 dark:text-gray-100">
                         {techServices[currentService].title}
                         <motion.span
                           animate={{ opacity: [0.5, 1, 0.5] }}
-                          transition={{ duration: 2, repeat: Infinity }}
+                          transition={{ duration: 0.3, repeat: Infinity }}
                           className="ml-2 text-accent-500"
                         >
                           <BoltIcon className="inline h-5 w-5" />

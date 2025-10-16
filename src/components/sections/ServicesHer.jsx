@@ -54,7 +54,7 @@ const servicesHighlights = [
 ];
 
 const servicesStats = [
-  { label: "Services Delivered", value: "500+", icon: CheckCircleIcon },
+  { label: "Services Delivered", value: "10+", icon: CheckCircleIcon },
   { label: "Industries Served", value: "15+", icon: UsersIcon },
   { label: "Client Satisfaction", value: "98%", icon: TrophyIcon },
   { label: "Project Success Rate", value: "100%", icon: ArrowTrendingUpIcon },
@@ -193,15 +193,15 @@ export default function ServicesHero() {
       <div className="container relative z-10 mx-auto flex min-h-screen items-center px-6 pb-16">
         <motion.div
           className="grid w-full items-center gap-12 lg:grid-cols-2 lg:gap-16"
-          variants={containerVariants}
-          initial="hidden"
+        
+         
           animate="visible"
         >
           {/* Content Section */}
           <div className="space-y-8 pt-20 text-center lg:pt-0 lg:text-left">
             {/* Enhanced Service Badge */}
             <motion.div
-              variants={itemVariants}
+             
               whileHover={{ scale: 1.05, y: -2 }}
               className="group relative inline-flex items-center gap-3 rounded-full border border-primary-200/60 bg-gradient-to-r from-white/90 to-primary-50/80 px-6 py-3 shadow-xl backdrop-blur-md dark:border-primary-700/60 dark:from-slate-800/90 dark:to-primary-900/80"
             >
@@ -253,8 +253,7 @@ export default function ServicesHero() {
               {serviceBenefits.map((benefit, index) => (
                 <motion.div
                   key={benefit}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
+                 
                   transition={{ delay: 0.5 + index * 0.1 }}
                   className="flex items-center gap-3"
                 >
@@ -269,7 +268,7 @@ export default function ServicesHero() {
             {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
+              className="flex flex-col items-center mobile:justify-center gap-4 sm:flex-row sm:gap-6"
             >
               <Link href="/contact">
                 <motion.button

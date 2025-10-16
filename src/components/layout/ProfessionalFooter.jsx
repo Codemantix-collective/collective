@@ -143,9 +143,7 @@ export default function ProfessionalFooter() {
         <div className="grid grid-cols-1 gap-12 py-16 md:grid-cols-2 lg:grid-cols-5">
           {/* Enhanced Company Info */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-2"
           >
@@ -194,9 +192,8 @@ export default function ProfessionalFooter() {
 
             <motion.p
               className="mb-10 text-xl leading-relaxed text-gray-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+             
+             
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               Transforming businesses through{" "}
@@ -227,9 +224,7 @@ export default function ProfessionalFooter() {
                 <motion.div
                   key={index}
                   className="group flex items-center space-x-4"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                 
                   transition={{ duration: 0.6, delay }}
                   whileHover={{ x: 5 }}
                 >
@@ -250,9 +245,7 @@ export default function ProfessionalFooter() {
 
           {/* Services */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+           
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h4 className="mb-6 text-lg font-semibold">Services</h4>
@@ -272,9 +265,7 @@ export default function ProfessionalFooter() {
 
           {/* Company */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+           
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h4 className="mb-6 text-lg font-semibold">Company</h4>
@@ -294,9 +285,7 @@ export default function ProfessionalFooter() {
 
           {/* Resources */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+           
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <h4 className="mb-6 text-lg font-semibold">Resources</h4>
@@ -318,7 +307,7 @@ export default function ProfessionalFooter() {
         {/* Enhanced Newsletter Section */}
         <motion.div
          
-          viewport={{ once: true }}
+         
           transition={{ duration: 0.8, delay: 0.4 }}
           className="relative border-t border-slate-700/50 py-16"
         >
@@ -402,7 +391,7 @@ export default function ProfessionalFooter() {
         {/* Enhanced Bottom Footer */}
         <motion.div
          
-          viewport={{ once: true }}
+         
           transition={{ duration: 0.8, delay: 0.6 }}
           className="relative flex flex-col items-center justify-between border-t border-slate-700/50 py-10 md:flex-row"
         >
@@ -415,9 +404,7 @@ export default function ProfessionalFooter() {
 
           <motion.div
             className="mb-6 text-gray-400 md:mb-0"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+           
             transition={{ duration: 0.6, delay: 0.8 }}
           >
             <span className="text-sm">© 2025</span>{" "}
